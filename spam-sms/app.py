@@ -24,8 +24,8 @@ def transform_text(text):
 
     return " ".join(y)
 
-tfidf = pickle.load(open('E:/codsoft machine learing projects/spam-sms/vectorizer.pkl','rb'))
-model = pickle.load(open('E:/codsoft machine learing projects/spam-sms/model.pkl','rb'))
+tfidf = pickle.load(open('spam-sms/vectorizer.pkl','rb'))
+model = pickle.load(open('spam-sms/model.pkl','rb'))
 
 st.markdown(
     """
