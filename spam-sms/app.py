@@ -45,14 +45,14 @@ transformed_text = transform_text(new_text1)  # Assuming the function is defined
 
 def main():
     st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #308ca1;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
+        """
+        <style>
+        .stApp {
+            background-color: #308ca1;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
     )
 
     st.title("Spam SMS Classifier")
@@ -60,18 +60,19 @@ def main():
     input_sms = st.text_area("Enter the message")
 
     if st.button('Predict'):
-    # Preprocess the input message  
+        # Preprocess the input message  
         transformed_sms = transform_text(input_sms)
-    # Vectorize the preprocessed message
+        # Vectorize the preprocessed message
         vector_input = tfidf.transform([transformed_sms])
-    # Predict the result
+        # Predict the result
         result = model.predict(vector_input)[0]
-    # Display the result
+        # Display the result
         if result == 1:
             st.header("Spam")
         else:
             st.header("Not Spam")
 
-main()
+if __name__ == "__main__":
+    main()
             
 
