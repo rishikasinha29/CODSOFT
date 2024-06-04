@@ -32,7 +32,7 @@ warnings.filterwarnings('ignore')
 ps = PorterStemmer()
 
 # Load the dataset
-df = pd.read_csv("E:\\codsoft machine learing projects\\spam.csv")
+df = pd.read_csv("E:\\codsoft machine learing projects\\spam-sms\\spam.csv")
 print(df.sample(5))
 print(df.shape)
 
