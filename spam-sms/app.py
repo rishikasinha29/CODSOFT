@@ -72,3 +72,6 @@ def main():
         else:
             st.header("Not Spam")
 
+main()
+            st.header("Not Spam")
+
