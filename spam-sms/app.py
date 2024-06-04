@@ -30,7 +30,7 @@ def transform_text(text):
     return " ".join(y)
 try:
     with open('vectorizer.pkl', 'rb') as f:
-        vectorizer = pickle.load(f)
+        tfidf = pickle.load(f)
 
     with open('model.pkl', 'rb') as f:
         model = pickle.load(f)
