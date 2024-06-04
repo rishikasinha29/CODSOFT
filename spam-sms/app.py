@@ -36,7 +36,7 @@ except FileNotFoundError:
 
 new_text1 = "Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's,,,"
 
-transformed_text = transform_text(new_text)  # Assuming the function is defined
+transformed_text = transform_text(new_text1)  # Assuming the function is defined
 
 st.markdown(
     """
