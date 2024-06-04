@@ -4,6 +4,8 @@ import string
 from nltk.corpus import stopwords
 import nltk
 from nltk.stem.porter import PorterStemmer
+from sklearn.feature_extraction.text import TfidfVectorizer
+
 
 ps = PorterStemmer()
 
@@ -41,7 +43,8 @@ new_text1 = "Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005.
 
 transformed_text = transform_text(new_text1)  # Assuming the function is defined
 
-st.markdown(
+def main():
+    st.markdown(
     """
     <style>
     .stApp {
@@ -50,21 +53,22 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True
-)
+    )
 
-st.title("Spam SMS Classifier")
+    st.title("Spam SMS Classifier")
 
-input_sms = st.text_area("Enter the message")
+    input_sms = st.text_area("Enter the message")
 
-if st.button('Predict'):
-    # Preprocess the input message
-    transformed_sms = transform_text(input_sms)
+    if st.button('Predict'):
+    # Preprocess the input message  
+        transformed_sms = transform_text(input_sms)
     # Vectorize the preprocessed message
-    vector_input = tfidf.transform([transformed_sms])
+        vector_input = tfidf.transform([transformed_sms])
     # Predict the result
-    result = model.predict(vector_input)[0]
+        result = model.predict(vector_input)[0]
     # Display the result
-    if result == 1:
-        st.header("Spam")
-    else:
-        st.header("Not Spam")
+        if result == 1:
+            st.header("Spam")
+        else:
+            st.header("Not Spam")
+
