@@ -23,9 +23,16 @@ def transform_text(text):
         y.append(ps.stem(i))
 
     return " ".join(y)
+try:
+    with open('vectorizer.pkl', 'rb') as f:
+        vectorizer = pickle.load(f)
 
-tfidf = pickle.load(open('spam-sms\\vectorizer.pkl','rb'))
-model = pickle.load(open('spam-sms\\model.pkl','rb'))
+    with open('model.pkl', 'rb') as f:
+        model = pickle.load(f)
+
+new_text1 = "Free entry in 2 a wkly comp to win FA Cup final tkts 21st May 2005. Text FA to 87121 to receive entry question(std txt rate)T&C's apply 08452810075over18's,,,"
+
+transformed_text = transform_text(new_text)  # Assuming the function is defined
 
 st.markdown(
     """
