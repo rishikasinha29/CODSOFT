@@ -1,6 +1,9 @@
 streamlit
+numpy
+pandas
 nltk
 scikit-learn
-pickle
-stopwords
-punkt
+wordcloud
+matplotlib
+seaborn
+xgboost
